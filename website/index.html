@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Test Env</title>
+</head>
+<body>
+    <center>Test Env</center>
+    <div class="upload">
+    <form method=”post” enctype=”multipart/form-data”>
+        <div>
+        <label for="file">Select File</label>
+        <input type="file" id="file" value="file" name="filename" multiple>
+        </div>
+        <div>
+        <button id="upload"> Click here to submit</button>
+        </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("upload").onclick= ()=>{
+            let filename = document.getElementById("file")
+            if(filename.files.length === 0){
+            alert('Please choose a file')
+            return }
+
+            let file = filename.files[0]
+            console.log(file)
+            localStorage.setItem("file",file)
+            let formdata = new formdata(file)
+            fetch('itcsubmit.wustl.edu:22',{method: "POST",body:formdata });
+            alert("File uploaded Successfully")
+        }
+
+    </script>
+</body>
+</html>

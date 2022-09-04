@@ -1,0 +1,42 @@
+/*
+ * General/Utility Styles
+*/
+
+* {
+    -moz-box-sizing: border-box; /* Firexfox */
+    -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box; /* IE */
+  }
+
+  body{
+    display: block;
+    font: 3rem ‘Fira Sans’, sans-serif;
+
+  }
+
+.upload{
+    padding-top: 2rem;
+    text-align: center;
+    border: 1px solid red;
+}
+
+  label {
+    display: block;
+    font: 1.5rem ‘Fira Sans’, sans-serif;
+ }
+input,label {
+    margin: .5rem 0;
+    }
+
+    .Myclass + Label {
+        Font-size: 3em;
+        Font-weight: 900;
+        Color: orange;
+        Background-color: purple;
+        Border-radius: 15px;
+        Display: Inline-block;
+        }
+        .Myclass:Focus + Label,
+        .Myclass + Label:Hover {
+        Background-color: red;
+        }
